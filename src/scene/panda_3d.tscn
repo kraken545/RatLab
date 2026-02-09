@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bmdpovuwksgdm"]
+
+[ext_resource type="Script" uid="uid://ndmuv3bscg0t" path="res://src/script/character_body_3d_panda.gd" id="1_miwax"]
+[ext_resource type="Texture2D" uid="uid://cf0whmd31iigi" path="res://src/assets/animals/rode_panda.png" id="1_qr6lr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_miwax"]
+radius = 1.0307617
+height = 3.028595
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2xvm"]
+atlas = ExtResource("1_qr6lr")
+region = Rect2(0, 0, 880, 1216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odgbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2xvm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_n6xec"]
+script/source = "extends SpringArm3D
+
+#@export var mouse_sensibility: float = 0.0015
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#
+#func _unhandled_input(event : InputEvent) -> void:
+	#if event is InputEventMouseMotion:
+	#
+		#rotation.y -= event.relative.x * mouse_sensibility
+		#
+		#rotation.x -= event.relative.y * mouse_sensibility
+"
+
+[node name="panda" type="Node3D" unique_id=575977674]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=849817236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3787336, 0)
+script = ExtResource("1_miwax")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=76680450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014807582, 0.07136881, 0.007262185)
+shape = SubResource("CapsuleShape3D_miwax")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=455858512]
+transform = Transform3D(-0.5149874, 0, 0.0035953, 0, 0.515, 0, -0.0035953, 0, -0.5149874, 3.6239624e-05, -0.011623144, -0.020290852)
+sprite_frames = SubResource("SpriteFrames_odgbe")
+frame_progress = 0.8226231
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D" unique_id=786023288]
+spring_length = 6.0
+script = SubResource("GDScript_n6xec")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D" unique_id=195151519]
+transform = Transform3D(1, 0, 0, 0, 0.9080921, 0.41877067, 0, -0.41877067, 0.9080921, 0, 2.6846168, 6.164226)
+fov = 64.9

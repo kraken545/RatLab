@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://d1kvtui4g5c03"]
+
+[ext_resource type="Texture2D" uid="uid://dd8jkok2kiaya" path="res://src/assets/animals/LLSprite_Nero_AI_Background_Remover_transparent.png" id="2_6m8d0"]
+
+[sub_resource type="GDScript" id="GDScript_u8oyb"]
+script/source = "extends CharacterBody3D
+
+
+@export var speed := 6.0
+@export var jump_force := 8.0
+@export var gravity := 20.0
+
+@onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
+
+func _physics_process(delta):
+	# Gravedad
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	else:
+		if velocity.y < 0:
+			velocity.y = 0
+
+	# Salto
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		velocity.y = jump_force
+
+	# Input
+	var input_x = Input.get_action_strength(\"right\") - Input.get_action_strength(\"left\")
+	var input_z = Input.get_action_strength(\"backward\") - Input.get_action_strength(\"forward\")
+
+	# Movimiento
+	velocity.x = input_x * speed
+	velocity.z = input_z * speed
+
+	# ---- VOLTEAR SPRITE ----
+	# Default: mira a la DERECHA
+	if input_x < 0 or input_z > 0:
+		# Izquierda o atrás → mirar a la izquierda
+		sprite.flip_h = true
+	elif input_x > 0 or input_z < 0:
+		# Derecha o adelante → mirar a la derecha
+		sprite.flip_h = false
+
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vyeyt"]
+radius = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do2g2"]
+atlas = ExtResource("2_6m8d0")
+region = Rect2(864, 0, 288, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfnuf"]
+atlas = ExtResource("2_6m8d0")
+region = Rect2(288, 0, 288, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoeq3"]
+atlas = ExtResource("2_6m8d0")
+region = Rect2(864, 0, 288, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6ra7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do2g2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfnuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoeq3")
+}],
+"loop": false,
+"name": &"idl",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_n6xec"]
+script/source = "extends SpringArm3D
+
+#@export var mouse_sensibility: float = 0.0015
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#
+#func _unhandled_input(event : InputEvent) -> void:
+	#if event is InputEventMouseMotion:
+	#
+		#rotation.y -= event.relative.x * mouse_sensibility
+		#
+		#rotation.x -= event.relative.y * mouse_sensibility
+"
+
+[node name="stokstaartje" type="Node3D" unique_id=1398261948]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1085799857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3640146, 0)
+script = SubResource("GDScript_u8oyb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1463574554]
+transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_vyeyt")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=2024768611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.159765, 0)
+sprite_frames = SubResource("SpriteFrames_u6ra7")
+animation = &"idl"
+frame = 2
+frame_progress = 1.0
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D" unique_id=1193622118]
+transform = Transform3D(0.99409497, 0.059155468, 0.09097096, -0.09348822, 0.8925099, 0.44123238, -0.05509118, -0.44713163, 0.89277, 0, 2.7787733, 3.330013)
+spring_length = 6.0
+script = SubResource("GDScript_n6xec")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D" unique_id=876052546]
+transform = Transform3D(0.9976807, -0.033840083, -0.05905858, 0.043177634, 0.98538375, 0.16478595, 0.052619003, -0.1669538, 0.98455954, 0.14247322, -0.71314025, 0.37491846)
+fov = 63.947514

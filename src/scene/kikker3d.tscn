@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cadmr8lpfgtns"]
+
+[ext_resource type="Script" uid="uid://cktqq3b4vba88" path="res://src/script/character_body_3d_kikker.gd" id="1_3j1ub"]
+[ext_resource type="Texture2D" uid="uid://silnp68pcsvf" path="res://src/assets/animals/Kikker.png" id="2_qnxxk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tsaot"]
+radius = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjnr0"]
+atlas = ExtResource("2_qnxxk")
+region = Rect2(0, 0, 864, 1184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsaot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjnr0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_80jpa"]
+script/source = "extends SpringArm3D
+
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#pass # Replace with function body.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#pass
+"
+
+[node name="Kikker" type="Node3D" unique_id=1004462273]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1039208270]
+script = ExtResource("1_3j1ub")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1003669390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_tsaot")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1263100499]
+transform = Transform3D(-0.34, 0, 2.9723743e-08, 0, 0.34, 0, -2.9723743e-08, 0, -0.34, 0, 1, 0)
+sprite_frames = SubResource("SpriteFrames_tsaot")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D" unique_id=1920112609]
+spring_length = 6.0
+script = SubResource("GDScript_80jpa")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D" unique_id=948989487]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 2, 3)
+fov = 63.9
