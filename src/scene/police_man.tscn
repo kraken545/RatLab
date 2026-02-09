@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dwude35uxxftk"]
+
+[ext_resource type="Texture2D" uid="uid://by7bnk8hntdeh" path="res://src/assets/npc/ManPolice.png" id="1_dus4k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dus4k"]
+size = Vector3(2.8140602, 4.345276, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjks0"]
+atlas = ExtResource("1_dus4k")
+region = Rect2(0, 0, 582, 775)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3hx2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjks0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="police_man" type="Node3D" unique_id=1732817125]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=663894725]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=460656091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021895409, 2.1889038, 0.048242092)
+shape = SubResource("BoxShape3D_dus4k")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=639746728]
+transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, 0, 2.3087397, 0)
+sprite_frames = SubResource("SpriteFrames_3hx2b")

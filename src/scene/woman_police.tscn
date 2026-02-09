@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dpg0rh8lsc8aj"]
+
+[ext_resource type="Texture2D" uid="uid://1tlixni35jo0" path="res://src/assets/npc/Women_police.png" id="1_yye5m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yye5m"]
+size = Vector3(2.1602097, 3.4319458, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br5db"]
+atlas = ExtResource("1_yye5m")
+region = Rect2(0, 0, 559, 766)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lptqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br5db")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="woman_police" type="Node3D" unique_id=503230063]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=320904343]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=219174401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09395981, 1.7374573, 0)
+shape = SubResource("BoxShape3D_yye5m")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1359599095]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 1.7692597, 0.034057975)
+sprite_frames = SubResource("SpriteFrames_lptqn")
