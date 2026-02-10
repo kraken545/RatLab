@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dr5dxcnr85jat"]
 
 [ext_resource type="Script" uid="uid://brem0jnc4gca0" path="res://src/scene/character_body_3d_npc.gd" id="1_ci7e8"]
-[ext_resource type="Texture2D" uid="uid://cr1cbpae0ipxc" path="res://src/assets/npc/women.png" id="1_qqfnn"]
+[ext_resource type="Texture2D" path="res://src/assets/npc/women.png" id="1_qqfnn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_26e6o"]
 size = Vector3(2.444336, 3.1655836, 0.39660645)

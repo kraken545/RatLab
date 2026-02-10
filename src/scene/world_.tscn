@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://jarlsefl4b3s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_td4fx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_td4fx"]
+
+[node name="world" type="Node3D" unique_id=18608542]
+
+[node name="Ruta_Cientificos" type="Node3D" parent="." unique_id=876731706]
+
+[node name="Marker3D" type="Marker3D" parent="Ruta_Cientificos" unique_id=2122718271]
+
+[node name="Marker3D2" type="Marker3D" parent="Ruta_Cientificos" unique_id=63147599]
+
+[node name="Marker3D3" type="Marker3D" parent="Ruta_Cientificos" unique_id=1319618425]
+
+[node name="Marker3D4" type="Marker3D" parent="Ruta_Cientificos" unique_id=722905825]
+
+[node name="Marker3D5" type="Marker3D" parent="Ruta_Cientificos" unique_id=1156551821]
+
+[node name="Ruta_Visitantes" type="Node3D" parent="." unique_id=528473832]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1734974765]
+mesh = SubResource("BoxMesh_td4fx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=783359123]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1087900709]
+shape = SubResource("BoxShape3D_td4fx")
