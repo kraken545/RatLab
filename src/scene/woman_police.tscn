@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dpg0rh8lsc8aj"]
 
+[ext_resource type="Script" uid="uid://brem0jnc4gca0" path="res://src/scene/character_body_3d_npc.gd" id="1_8yhyr"]
 [ext_resource type="Texture2D" uid="uid://1tlixni35jo0" path="res://src/assets/npc/Women_police.png" id="1_yye5m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yye5m"]
@@ -23,6 +24,7 @@ animations = [{
 [node name="woman_police" type="Node3D" unique_id=503230063]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=320904343]
+script = ExtResource("1_8yhyr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=219174401]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09395981, 1.7374573, 0)

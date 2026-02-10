@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dr5dxcnr85jat"]
+
+[ext_resource type="Script" uid="uid://brem0jnc4gca0" path="res://src/scene/character_body_3d_npc.gd" id="1_ci7e8"]
+[ext_resource type="Texture2D" uid="uid://cr1cbpae0ipxc" path="res://src/assets/npc/women.png" id="1_qqfnn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_26e6o"]
+size = Vector3(2.444336, 3.1655836, 0.39660645)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ayh2"]
+atlas = ExtResource("1_qqfnn")
+region = Rect2(0, 0, 637, 760)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g84ii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ayh2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="women" type="Node3D" unique_id=1098674717]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1254738987]
+script = ExtResource("1_ci7e8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=234350889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05107098, 1.5868312, 0.029376268)
+shape = SubResource("BoxShape3D_26e6o")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=262484484]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -0.04637754, 1.5682728, 0)
+sprite_frames = SubResource("SpriteFrames_g84ii")

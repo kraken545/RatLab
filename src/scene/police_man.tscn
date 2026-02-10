@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwude35uxxftk"]
 
 [ext_resource type="Texture2D" uid="uid://by7bnk8hntdeh" path="res://src/assets/npc/ManPolice.png" id="1_dus4k"]
+[ext_resource type="Script" uid="uid://cpvl8xay23kxc" path="res://src/scene/character_body_3d_sien.gd" id="1_wr3gr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dus4k"]
 size = Vector3(2.8140602, 4.345276, 1)
@@ -23,6 +24,7 @@ animations = [{
 [node name="police_man" type="Node3D" unique_id=1732817125]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=663894725]
+script = ExtResource("1_wr3gr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=460656091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021895409, 2.1889038, 0.048242092)
