@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cughkb6yxu0qn"
+path="res://.godot/imported/GravelPath6.obj-843f0d626fd5e2a5f3c123f2b74f655c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GravelPath6.obj-843f0d626fd5e2a5f3c123f2b74f655c.mesh"]
+
+source_file="res://src/assets/Game 3D Assets/GravelPath6/GravelPath6.obj"
+dest_files=["res://.godot/imported/GravelPath6.obj-843f0d626fd5e2a5f3c123f2b74f655c.mesh", "res://.godot/imported/GravelPath6.obj-843f0d626fd5e2a5f3c123f2b74f655c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbtp51x38sfh3"
+path="res://.godot/imported/Bush3.obj-fbe1e6a9f52dc62c487e6cd7f1a62062.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bush3.obj-fbe1e6a9f52dc62c487e6cd7f1a62062.mesh"]
+
+source_file="res://src/assets/Game 3D Assets/Bush3/Bush3.obj"
+dest_files=["res://.godot/imported/Bush3.obj-fbe1e6a9f52dc62c487e6cd7f1a62062.mesh", "res://.godot/imported/Bush3.obj-fbe1e6a9f52dc62c487e6cd7f1a62062.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b4fed3bncy1qh"]
 
 [ext_resource type="Script" uid="uid://wwx2nbwmvlhc" path="res://src/script/world_climbing.gd" id="1_cjspe"]
-[ext_resource type="Script" uid="uid://1eukft11alu7" path="res://src/script/mesh_instance_3d.gd" id="2_ikk52"]
 [ext_resource type="PackedScene" uid="uid://cpu3tktfrph6s" path="res://src/scene/Leon3d.tscn" id="5_4xui3"]
 [ext_resource type="PackedScene" uid="uid://dpg0rh8lsc8aj" path="res://src/scene/woman_police.tscn" id="6_d8bnw"]
 [ext_resource type="PackedScene" uid="uid://dr5dxcnr85jat" path="res://src/scene/women.tscn" id="8_7wmjv"]
@@ -21,41 +20,44 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 transform = Transform3D(1, 0, 0, 0, 0.9999418, 0.010785925, 0, -0.010785925, 0.9999418, 0, 0, 0)
 script = ExtResource("1_cjspe")
 
+[node name="Ruta_Cientificos" type="Node3D" parent="." unique_id=1125758880]
+
+[node name="Marker3D" type="Marker3D" parent="Ruta_Cientificos" unique_id=131937591]
+transform = Transform3D(600.07, 0, 0, 0, 0.20999987, 2.3841858e-07, 0, -2.3283064e-10, 200.6549, -245.93839, 11.483306, -71.675934)
+gizmo_extents = 0.05
+
+[node name="Marker3D2" type="Marker3D" parent="Ruta_Cientificos" unique_id=154963149]
+transform = Transform3D(600.07007, 0, 0, 0, 0.21, 0, 0, 0, 200.65498, 155.11388, 13.884331, -38.36366)
+gizmo_extents = 0.09
+
+[node name="Marker3D3" type="Marker3D" parent="Ruta_Cientificos" unique_id=443210001]
+transform = Transform3D(600.07, 0, 0, 0, 0.20999993, 2.3841858e-07, 0, 0, 200.65492, 193.97581, 10.569194, 29.155727)
+gizmo_extents = 0.09
+
+[node name="Marker3D4" type="Marker3D" parent="Ruta_Cientificos" unique_id=601732556]
+transform = Transform3D(600.07, 0, 0, 0, 0.21, 0, 0, 0, 200.655, 64.0903, 7.84741, 33.849815)
+
+[node name="Marker3D5" type="Marker3D" parent="Ruta_Cientificos" unique_id=546590045]
+transform = Transform3D(600.07, 0, 0, 0, 0.21, 0, 0, 0, 200.655, -132.90967, 6.2135353, 17.967617)
+
+[node name="Ruta_Visitantes" type="Node3D" parent="." unique_id=1872132260]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=266607499]
-transform = Transform3D(600.07, 0, 0, 0, 0.21, 0, 0, 0, 200.655, 0.09669113, -0.33715868, -0.12461376)
+transform = Transform3D(600, 0, 0, 0, 0.1, 0, 0, 0, 200, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_5pkc3")
 mesh = SubResource("BoxMesh_hbeho")
-script = ExtResource("2_ikk52")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1825278221]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1628558911]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9073486e-06, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9073486e-06, 0)
 shape = SubResource("ConvexPolygonShape3D_5lte0")
 
-[node name="Marker3D" type="Marker3D" parent="MeshInstance3D" unique_id=131937591]
-transform = Transform3D(1, 0, 0, 0, 0.99999946, 0, 0, 0, 0.9999995, -0.41, 57.136185, -0.3570484)
-gizmo_extents = 0.05
+[node name="women" parent="." unique_id=1098674717 instance=ExtResource("8_7wmjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.940304, 0.81685644, -0.16279028)
 
-[node name="Marker3D2" type="Marker3D" parent="MeshInstance3D" unique_id=154963149]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.25834244, 68.56964, -0.19103077)
-gizmo_extents = 0.09
+[node name="Leeuw" parent="." unique_id=956679259 instance=ExtResource("5_4xui3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9434725, 0.400604, -0.16728021)
 
-[node name="Marker3D3" type="Marker3D" parent="MeshInstance3D" unique_id=443210001]
-transform = Transform3D(1, 0, 0, 0, 0.9999997, 0, 0, 0, 0.99999964, 0.3231048, 52.783276, 0.14546415)
-gizmo_extents = 0.09
-
-[node name="Marker3D4" type="Marker3D" parent="MeshInstance3D" unique_id=601732556]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1066542, 39.822395, 0.16885798)
-
-[node name="Marker3D5" type="Marker3D" parent="MeshInstance3D" unique_id=546590045]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22164078, 32.04204, 0.089706205)
-
-[node name="women" parent="MeshInstance3D" unique_id=1098674717 instance=ExtResource("8_7wmjv")]
-transform = Transform3D(0.0016664722, 0, 0, 0, 4.761905, 0, 0, 0, 0.0049836785, -0.013393428, 1.920881, -0.00023061091)
-
-[node name="woman_police" parent="MeshInstance3D" unique_id=503230063 instance=ExtResource("6_d8bnw")]
-transform = Transform3D(0.0016664722, 0, 0, 0, 4.761905, 0, 0, 0, 0.0049836785, 0.0071071554, 1.9208808, -0.00023061091)
-
-[node name="Leeuw" parent="MeshInstance3D" unique_id=956679259 instance=ExtResource("5_4xui3")]
-transform = Transform3D(0.0016664722, 0, 0, 0, 4.761905, 0, 0, 0, 0.0049836785, -0.0017334038, 1.9208808, -0.00023061091)
+[node name="woman_police" parent="." unique_id=503230063 instance=ExtResource("6_d8bnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.361482, 0.5111047, -0.1660883)

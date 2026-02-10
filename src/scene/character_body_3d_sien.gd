@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export_group("Configuración")
 @export var velocidad := 3.0
-@export var world : Node3D # Aquí arrastra el 'MeshInstance3D'
+@export var Ruta_Cientificos : Node3D # Aquí arrastra el 'MeshInstance3D'
 
 var puntos : Array[Vector3] = []
 var indice := 0
@@ -12,9 +12,9 @@ var buscando := false
 
 func _ready():
 	await get_tree().process_frame
-	if world:
+	if Ruta_Cientificos:
 		# Buscamos los Marker3D dentro del MeshInstance3D
-		for hijo in world.get_children():
+		for hijo in Ruta_Cientificos.get_children():
 			if hijo is Marker3D:
 				puntos.append(hijo.global_position)
 		print("Científico: Puntos encontrados: ", puntos.size())
