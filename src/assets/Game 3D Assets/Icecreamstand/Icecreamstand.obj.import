@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ie27m3gydisq"
+path="res://.godot/imported/Icecreamstand.obj-aeeb928dd8c1ee7a07399891fef33872.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Icecreamstand.obj-aeeb928dd8c1ee7a07399891fef33872.mesh"]
+
+source_file="res://src/assets/Game 3D Assets/Icecreamstand/Icecreamstand.obj"
+dest_files=["res://.godot/imported/Icecreamstand.obj-aeeb928dd8c1ee7a07399891fef33872.mesh", "res://.godot/imported/Icecreamstand.obj-aeeb928dd8c1ee7a07399891fef33872.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c6if6k06ksvdg"]
+
+[ext_resource type="Texture2D" uid="uid://ceevvw7d4ib1b" path="res://src/assets/npc/man.png" id="1_ugvvu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfr4v"]
+size = Vector3(2.232152, 3.28045, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb5kw"]
+atlas = ExtResource("1_ugvvu")
+region = Rect2(0, 0, 552, 730)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqn0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb5kw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="man" type="Node3D" unique_id=440454568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044690132, 0.18250334, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1920624019]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=853431744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005752325, 1.4830356, 0)
+shape = SubResource("BoxShape3D_pfr4v")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=344293687]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 1.4310225, 0)
+sprite_frames = SubResource("SpriteFrames_dqn0h")
