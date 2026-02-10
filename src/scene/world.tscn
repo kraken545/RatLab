@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://b4fed3bncy1qh"]
 
 [ext_resource type="Script" uid="uid://wwx2nbwmvlhc" path="res://src/script/world_climbing.gd" id="1_cjspe"]
-[ext_resource type="Script" uid="uid://bla54g8nogn4p" path="res://src/script/mesh_instance_3d_2.gd" id="2_640v4"]
-[ext_resource type="Script" uid="uid://1eukft11alu7" path="res://src/scene/mesh_instance_3d.gd" id="2_ikk52"]
-[ext_resource type="PackedScene" uid="uid://dwude35uxxftk" path="res://src/scene/police_man.tscn" id="5_4xui3"]
+[ext_resource type="PackedScene" path="res://src/scene/police_man.tscn" id="5_4xui3"]
 [ext_resource type="PackedScene" uid="uid://b1lh6kn03n5b3" path="res://src/scene/aap3d.tscn" id="6_7gxp8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5pkc3"]
-albedo_color = Color(0.9558086, 0.78647447, 0.88712394, 1)
+albedo_color = Color(0, 0.47843137, 0, 1)
 metallic_specular = 1.0
 emission = Color(0.3074976, 0.66984224, 1, 1)
 emission_energy_multiplier = 11.31
@@ -17,18 +15,18 @@ emission_energy_multiplier = 11.31
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5lte0"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_mrtsb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_640v4"]
+albedo_color = Color(0.23921569, 0.5019608, 0.23921569, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mrtsb"]
+[sub_resource type="SphereMesh" id="SphereMesh_ikk52"]
 
 [node name="world" type="Node3D" unique_id=484008576]
 script = ExtResource("1_cjspe")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=266607499 groups=["Climbable"]]
-transform = Transform3D(25.47, 0, 0, 0, 0.475, 0, 0, 0, 20.215, 0.075372815, -0.17067885, -0.13508224)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=266607499]
+transform = Transform3D(600, 0, 0, 0, 0.475, 0, 0, 0, 800, 0.22482204, -0.17001152, -1.7746677)
 material_override = SubResource("StandardMaterial3D_5pkc3")
 mesh = SubResource("BoxMesh_hbeho")
-script = ExtResource("2_ikk52")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1825278221]
 
@@ -36,25 +34,20 @@ script = ExtResource("2_ikk52")
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9073486e-06, 0)
 shape = SubResource("ConvexPolygonShape3D_5lte0")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1249453074 node_paths=PackedStringArray("landing_marker") groups=["Climbable"]]
-transform = Transform3D(1, 0, 0, 0, 12.055, 0, 0, 0, 1, 8.346541, 5.8205714, -9.514969)
-visible = false
-mesh = SubResource("BoxMesh_mrtsb")
-script = ExtResource("2_640v4")
-landing_marker = NodePath("Marker3D")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=309694654]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=790287047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-05, 0.00075513124, 0.008713007)
-shape = SubResource("BoxShape3D_mrtsb")
-
-[node name="Marker3D" type="Marker3D" parent="MeshInstance3D2" unique_id=876786113]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5641038, 0)
-gizmo_extents = 0.6
-
 [node name="aap" parent="." unique_id=1589153327 instance=ExtResource("6_7gxp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2987032, 0, 0)
 
 [node name="police_man" parent="." unique_id=1732817125 instance=ExtResource("5_4xui3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040474176, 0)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=977401483]
+transform = Transform3D(61.075, 0, 0, 0, 24.514, 0, 0, 0, 64.599, 31.461533, -8.678507, 57.749165)
+material_override = SubResource("StandardMaterial3D_640v4")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ikk52")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D3" unique_id=514386079]
+transform = Transform3D(27.734997, 0, 0, 0, 10.765999, 0, 0, 0, 20.604998, -4.5324225, -4.5082865, 5.5986567)
+material_override = SubResource("StandardMaterial3D_640v4")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ikk52")
