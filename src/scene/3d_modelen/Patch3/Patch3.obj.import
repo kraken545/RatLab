@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://covvt2praex0g"
+path="res://.godot/imported/Patch3.obj-72f203b00b18f68f7149e876d7ef794d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Patch3.obj-72f203b00b18f68f7149e876d7ef794d.mesh"]
+
+source_file="res://src/scene/3d_modelen/Patch3/Patch3.obj"
+dest_files=["res://.godot/imported/Patch3.obj-72f203b00b18f68f7149e876d7ef794d.mesh", "res://.godot/imported/Patch3.obj-72f203b00b18f68f7149e876d7ef794d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

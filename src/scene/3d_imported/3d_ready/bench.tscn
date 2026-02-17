@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b185ska2primi"]
+
+[ext_resource type="ArrayMesh" uid="uid://d2oiog0eng1bq" path="res://src/scene/3d_modelen/Bench/Bench.obj" id="1_cyblq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8c4y"]
+shading_mode = 2
+disable_fog = true
+albedo_color = Color(0.732355, 0.41622147, 0.1724852, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh2f8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8c4y"]
+size = Vector3(121.524536, 62.09146, 318.9728)
+
+[node name="bench" type="Node3D" unique_id=1300313967]
+
+[node name="Bench" type="MeshInstance3D" parent="." unique_id=1857503718]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0.10902619, 0.037269115, -1.996258)
+material_override = SubResource("StandardMaterial3D_l8c4y")
+material_overlay = SubResource("StandardMaterial3D_fh2f8")
+mesh = ExtResource("1_cyblq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bench" unique_id=1335387896]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bench/StaticBody3D" unique_id=267004835]
+transform = Transform3D(3.27, 0, 0, 0, 3.27, 0, 0, 0, 3.27, -5.03598, 59.978928, 2048.2507)
+shape = SubResource("BoxShape3D_l8c4y")

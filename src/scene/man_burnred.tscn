@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bsuqlm5cn151u"]
+
+[ext_resource type="Texture2D" uid="uid://n3fbwrv323ti" path="res://src/assets/npc/man_burnred.png" id="1_ktwl1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfr4v"]
+size = Vector3(2.3295593, 3.3033447, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n22t5"]
+atlas = ExtResource("1_ktwl1")
+region = Rect2(0, 0, 525, 732)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqn0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n22t5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="man_burnred" type="CharacterBody3D" unique_id=753844287]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1943568830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112594604, 1.6900024, 0)
+shape = SubResource("BoxShape3D_pfr4v")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=439435476]
+transform = Transform3D(0.48, 0, 0, 0, 0.47997427, -0.0049678166, 0, 0.0049678166, 0.47997427, 0, 1.6413609, 0)
+sprite_frames = SubResource("SpriteFrames_dqn0h")

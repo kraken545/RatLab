@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddkwwbqw6l0yi"
+path="res://.godot/imported/FenceI.obj-b19505db2133f44ab087b799d5c51c2e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FenceI.obj-b19505db2133f44ab087b799d5c51c2e.mesh"]
+
+source_file="res://src/scene/3d_modelen/FenceI/FenceI.obj"
+dest_files=["res://.godot/imported/FenceI.obj-b19505db2133f44ab087b799d5c51c2e.mesh", "res://.godot/imported/FenceI.obj-b19505db2133f44ab087b799d5c51c2e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dqr0yrtcmdi7e"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjg5k0kkhxlc7" path="res://src/scene/3d_modelen/Icecreamstand/Icecreamstand.obj" id="1_p1m7r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boyq6"]
+albedo_color = Color(0.6666667, 0.4627451, 0, 1)
+
+[node name="icecreamstand" type="Node3D" unique_id=1802251791]
+
+[node name="Icecreamstand" type="MeshInstance3D" parent="." unique_id=884085111]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -0.7053528, -0.20626068, -26.204758)
+material_override = SubResource("StandardMaterial3D_boyq6")
+mesh = ExtResource("1_p1m7r")

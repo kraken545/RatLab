@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dbgbmcpniokhb"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1njoitidu8ef" path="res://src/scene/3d_modelen/SuzzaneStatue/SuzzaneStatue.obj" id="1_oin1f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpwqm"]
+albedo_color = Color(0, 0.91551334, 0.722104, 1)
+
+[node name="statue" type="Node3D" unique_id=147429980]
+
+[node name="SuzzaneStatue" type="MeshInstance3D" parent="." unique_id=1297573467]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, -100.775276)
+material_override = SubResource("StandardMaterial3D_fpwqm")
+mesh = ExtResource("1_oin1f")

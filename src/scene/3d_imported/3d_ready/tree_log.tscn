@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bpr2xru6serj2"]
+
+[ext_resource type="PackedScene" uid="uid://cbcqm0805urk1" path="res://src/scene/3d_imported/New folder/FBX format/tree-log.fbx" id="1_ftlbo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5ll88"]
+height = 1.0021362
+radius = 0.111816406
+
+[node name="tree-log" unique_id=966765364 instance=ExtResource("1_ftlbo")]
+
+[node name="tree-log" parent="." index="0" unique_id=386734332]
+transform = Transform3D(-1.4753159, 0, 7.8627887, 0, 8, 0, -7.8627887, 0, -1.4753159, 0, 1.2237959, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-log" index="0" unique_id=1750713014]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-log/StaticBody3D" index="0" unique_id=1106092052]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.133883e-10, 0.0025939941)
+shape = SubResource("CylinderShape3D_5ll88")

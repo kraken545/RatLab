@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b4fed3bncy1qh"]
+
+[ext_resource type="PackedScene" uid="uid://d1kvtui4g5c03" path="res://ll3d.tscn" id="1_pcmil"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hbeho"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5lte0"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="world" type="Node3D" unique_id=484008576]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=266607499]
+transform = Transform3D(9, 0, 0, 0, 0.5, 0, 0, 0, 8, 0, 0, 0)
+mesh = SubResource("BoxMesh_hbeho")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1825278221]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1628558911]
+shape = SubResource("ConvexPolygonShape3D_5lte0")
+
+[node name="Player" parent="." unique_id=1398261948 instance=ExtResource("1_pcmil")]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dj7h0olk7flmb"]
+
+[ext_resource type="Texture2D" uid="uid://4ne1f5r2g48f" path="res://src/assets/npc/Woman_red.png" id="1_e3ebc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wn5hx"]
+size = Vector3(2.470581, 3.2531738, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y74ho"]
+atlas = ExtResource("1_e3ebc")
+region = Rect2(0, 0, 575, 791)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfhqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y74ho")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="woman_red" type="CharacterBody3D" unique_id=650852263]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=836307897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08111572, 1.6199951, 0)
+shape = SubResource("BoxShape3D_wn5hx")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1342649504]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 1.6208463, 0)
+sprite_frames = SubResource("SpriteFrames_rfhqd")

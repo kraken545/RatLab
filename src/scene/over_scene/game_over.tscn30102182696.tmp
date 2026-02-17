@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b07ftuwkgcyib"]
+
+[ext_resource type="Script" uid="uid://dxjm6tomxvqe3" path="res://src/scene/over_scene/game_over.gd" id="1_1ea7t"]
+[ext_resource type="Texture2D" uid="uid://jahyh1ivto47" path="res://src/assets/npc/Poster.png" id="1_em0sv"]
+
+[node name="GameOver" type="Node2D" unique_id=283128539]
+script = ExtResource("1_1ea7t")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=188023890]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=81646479]
+position = Vector2(574.37494, 351.99994)
+scale = Vector2(0.325898, 0.13908485)
+texture = ExtResource("1_em0sv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D" unique_id=1865396102]
+offset_left = 519.0
+offset_top = 418.0
+offset_right = 663.0
+offset_bottom = 552.0
+
+[node name="Button" type="Button" parent="Node2D/VBoxContainer" unique_id=672083216]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+
+[node name="Button2" type="Button" parent="Node2D/VBoxContainer" unique_id=1976300954]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Main Menu
+"
+
+[node name="TextEdit" type="Label" parent="Node2D" unique_id=1260060532]
+modulate = Color(0.85882354, 0.2, 0, 1)
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 136.0
+offset_top = 209.0
+offset_right = 1321.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.84098977, 0.06762417, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.7238251, 0.13535985, 0.012198643, 1)
+theme_override_colors/font_outline_color = Color(0.7879294, 0.076676436, 2.8878452e-07, 1)
+theme_override_font_sizes/font_size = 60
+text = "                De tijd is om! 
+Versterkingen zijn gearriveerd."
+
+[connection signal="pressed" from="Node2D/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

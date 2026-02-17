@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://c5mnlptd7b7x3"]
+
+[ext_resource type="Script" uid="uid://drxpe7rtbbo8v" path="res://src/scene/win/win_restart.gd" id="1_eq081"]
+[ext_resource type="Texture2D" uid="uid://jahyh1ivto47" path="res://src/assets/npc/Poster.png" id="1_p6jjv"]
+[ext_resource type="Texture2D" uid="uid://dxsk20cixsp5e" path="res://src/assets/npc/pixel-game-cup-retro-video-260nw-2499654887-Photoroom.png" id="3_vxb1p"]
+
+[node name="Win" type="Node2D" unique_id=1001424146]
+script = ExtResource("1_eq081")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1160265470]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=488090011]
+position = Vector2(576, 323.49997)
+scale = Vector2(0.32782212, 0.13041727)
+texture = ExtResource("1_p6jjv")
+
+[node name="TextEdit" type="Label" parent="Node2D" unique_id=1176540334]
+modulate = Color(0.86044186, 0.7541022, 0, 1)
+self_modulate = Color(0.0007241181, 8.120957, 0.9408734, 0.369)
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 129.0
+offset_top = 157.0
+offset_right = 1560.0
+offset_bottom = 570.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6788833, 0.6342545, 0.24660379, 1)
+theme_override_colors/font_shadow_color = Color(0.4745098, 0, 0.5254902, 1)
+theme_override_colors/font_outline_color = Color(0.4576456, 0.7088535, 1.92523e-07, 1)
+theme_override_font_sizes/font_size = 100
+text = "      Gefeliciteerd    
+  Je bent ontsnapt"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D" unique_id=1869263368]
+position = Vector2(118.00001, 242)
+rotation = -0.40142572
+scale = Vector2(2, 2)
+texture = ExtResource("3_vxb1p")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D" unique_id=1804411567]
+position = Vector2(1050, 254.00002)
+rotation = 0.40142572
+scale = Vector2(2, 2)
+texture = ExtResource("3_vxb1p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1200978222]
+offset_left = 511.0
+offset_top = 446.0
+offset_right = 655.0
+offset_bottom = 580.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=210278865]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1856702054]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Main Menu
+"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

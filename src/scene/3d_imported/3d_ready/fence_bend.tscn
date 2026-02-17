@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://nh3ri6mpy2wp"]
+
+[ext_resource type="PackedScene" uid="uid://lthos05hsip3" path="res://src/scene/3d_imported/FBX format/fence_bend.fbx" id="1_21wrb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jfa1b"]
+size = Vector3(0.001, 0.28344727, 0.6738281)
+
+[node name="fence_bend" unique_id=1570236831 instance=ExtResource("1_21wrb")]
+
+[node name="fence_bend" parent="." index="0" unique_id=1016344279]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -0.05, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fence_bend" index="0" unique_id=918077949]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fence_bend/StaticBody3D" index="0" unique_id=1256590657]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -0.2995, 0.16271448, 0)
+shape = SubResource("BoxShape3D_jfa1b")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="fence_bend/StaticBody3D" index="1" unique_id=1591265224]
+transform = Transform3D(0.9468684, 0, 0.32162127, 0, 1, 0, -0.32162127, 0, 0.9468684, -0.434618, 0.16271448, -0.22552875)
+shape = SubResource("BoxShape3D_jfa1b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="fence_bend/StaticBody3D" index="2" unique_id=1468576512]
+transform = Transform3D(0.30524662, 0, 0.95227337, 0, 1, 0, -0.95227337, 0, 0.30524662, 0.19152687, 0.16052246, 0.39439398)
+shape = SubResource("BoxShape3D_jfa1b")

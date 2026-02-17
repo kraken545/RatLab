@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bbwscdj61sgsm"]
+
+[ext_resource type="PackedScene" uid="uid://cgmhkddub4jp8" path="res://src/scene/3d_imported/FBX/TreeStump.fbx" id="1_ngsqh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avvk2"]
+size = Vector3(0.7322998, 0.67633057, 0.2922058)
+
+[node name="TreeStump" unique_id=1274633522 instance=ExtResource("1_ngsqh")]
+
+[node name="TreeStump" parent="." index="0" unique_id=1896803985]
+transform = Transform3D(200, 0, 0, 0, -8.742278e-06, 200, 0, -200, -8.742278e-06, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeStump" index="0" unique_id=1872314404]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeStump/StaticBody3D" index="0" unique_id=41733598]
+transform = Transform3D(0.010000002, 0, 0, 0, 0.010000007, -6.661338e-16, 0, 6.661338e-16, 0.010000007, 7.2631796e-05, -0.00023590137, 0.0018626445)
+shape = SubResource("BoxShape3D_avvk2")

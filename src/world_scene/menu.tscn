@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://5s8y2arumoem"]
+
+[ext_resource type="Script" uid="uid://b6avpqngxc0bg" path="res://menu.gd" id="1_sfgsy"]
+[ext_resource type="Texture2D" uid="uid://wmljkund33i1" path="res://src/assets/npc/nieuws_bericht_dierentuin_anylab.png" id="2_5lk64"]
+
+[sub_resource type="Theme" id="Theme_sfgsy"]
+default_base_scale = 1.58
+default_font_size = 25
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sfgsy"]
+load_path = "res://.godot/imported/Poster.png-99a079d17efebf5654af086e9a6ef6b0.s3tc.ctex"
+
+[node name="Menu" type="Control" unique_id=1183474081]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -6.0
+offset_top = 85.0
+offset_right = 1198.0
+offset_bottom = 936.0
+script = ExtResource("1_sfgsy")
+
+[node name="VBoxAnimales2" type="VBoxContainer" parent="." unique_id=1774711460]
+visible = false
+top_level = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 375.0
+offset_top = 188.0
+offset_right = 575.0
+offset_bottom = 552.5757
+scale = Vector2(1.778, 1.355)
+
+[node name="Leeuw" type="Button" parent="VBoxAnimales2" unique_id=1334408134]
+layout_mode = 2
+theme = SubResource("Theme_sfgsy")
+text = "Leeuw
+"
+
+[node name="Panda" type="Button" parent="VBoxAnimales2" unique_id=924169913]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Panda"
+
+[node name="Eend" type="Button" parent="VBoxAnimales2" unique_id=1212778374]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Eend"
+
+[node name="Kikker" type="Button" parent="VBoxAnimales2" unique_id=450020697]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Kikker"
+
+[node name="Aap" type="Button" parent="VBoxAnimales2" unique_id=2103869090]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Aap"
+
+[node name="stokstaartje" type="Button" parent="VBoxAnimales2" unique_id=1933899230]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Stokstaartje"
+
+[node name="VBoxNiveles" type="VBoxContainer" parent="." unique_id=611931695]
+top_level = true
+light_mask = 0
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 375.0
+offset_top = 222.0
+offset_right = 575.0
+offset_bottom = 546.0812
+scale = Vector2(1.778, 1.355)
+
+[node name="niveau1" type="Button" parent="VBoxNiveles" unique_id=1628751832]
+light_mask = 0
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.9843137, 0.41568628, 1)
+theme_override_font_sizes/font_size = 25
+text = "Easy
+"
+
+[node name="niveau2" type="Button" parent="VBoxNiveles" unique_id=632775963]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Normal
+"
+
+[node name="niveau3" type="Button" parent="VBoxNiveles" unique_id=816263112]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88235295, 0.2627451, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Hard
+"
+
+[node name="Node3D2" type="Node2D" parent="." unique_id=1353719884]
+
+[node name="Node3D" type="Node2D" parent="Node3D2" unique_id=1363948597]
+position = Vector2(-495, -450)
+
+[node name="Sprite3D" type="Sprite2D" parent="Node3D2/Node3D" unique_id=846015839]
+position = Vector2(1084, 692)
+scale = Vector2(0.33038768, 0.12961097)
+texture = SubResource("CompressedTexture2D_sfgsy")
+
+[node name="history" type="Node2D" parent="." unique_id=2142718811]
+visible = false
+
+[node name="Node3D" type="Node2D" parent="history" unique_id=1671927914]
+position = Vector2(-495, -450)
+
+[node name="Sprite3D" type="Sprite2D" parent="history/Node3D" unique_id=2006504202]
+position = Vector2(1068.0001, 694.00006)
+scale = Vector2(0.47407416, 0.47851855)
+texture = ExtResource("2_5lk64")
+
+[node name="Button" type="Button" parent="history/Node3D" unique_id=370077356]
+offset_left = 1120.0
+offset_top = 937.0
+offset_right = 1270.0
+offset_bottom = 973.0
+theme_override_colors/font_color = Color(0.9533157, 0.860331, 0.7303086, 1)
+theme_override_colors/font_hover_color = Color(0.69768506, 0.55987895, 0.45188332, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.87259763, 0.8037491, 0.7859015, 0.87058824)
+theme_override_font_sizes/font_size = 20
+text = "Verdergaan
+"
+
+[connection signal="pressed" from="VBoxAnimales2/Leeuw" to="." method="_on_leeuw_pressed"]
+[connection signal="pressed" from="VBoxAnimales2/Panda" to="." method="_on_panda_pressed"]
+[connection signal="pressed" from="VBoxAnimales2/Eend" to="." method="_on_eend_pressed"]
+[connection signal="pressed" from="VBoxAnimales2/Kikker" to="." method="_on_kikker_pressed"]
+[connection signal="pressed" from="VBoxAnimales2/Aap" to="." method="_on_aap_pressed"]
+[connection signal="pressed" from="VBoxAnimales2/stokstaartje" to="." method="_on_stokstaartje_pressed"]
+[connection signal="pressed" from="VBoxNiveles/niveau1" to="." method="_on_niveau_1_pressed"]
+[connection signal="pressed" from="VBoxNiveles/niveau2" to="." method="_on_niveau_2_pressed"]
+[connection signal="pressed" from="VBoxNiveles/niveau3" to="." method="_on_niveau_3_pressed"]
+[connection signal="pressed" from="history/Node3D/Button" to="." method="_on_button_pressed"]

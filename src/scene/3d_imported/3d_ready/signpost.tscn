@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dt3s3sfhwt1uq"]
+
+[ext_resource type="PackedScene" uid="uid://cxs1jvhpafr7n" path="res://src/scene/3d_imported/FBX format/signpost.fbx" id="1_uq1sf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uq1sf"]
+size = Vector3(0.03643799, 0.48876953, 0.027801514)
+
+[node name="signpost" unique_id=1491928362 instance=ExtResource("1_uq1sf")]
+
+[node name="signpost" parent="." index="0" unique_id=1104946027]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="signpost" index="0" unique_id=1426277141]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="signpost/StaticBody3D" index="0" unique_id=264945220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029772043, 0.23901367, -0.011570501)
+shape = SubResource("BoxShape3D_uq1sf")

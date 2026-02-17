@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://rgxm3qs0s3lx"]
+
+[ext_resource type="PackedScene" uid="uid://bj4cd8og2so2i" path="res://src/scene/3d_imported/New folder/FBX format/resource-planks.fbx" id="1_oxa2u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_seg2c"]
+size = Vector3(0.34176636, 0.058563232, 0.56051636)
+
+[node name="resource-planks" unique_id=1455970893 instance=ExtResource("1_oxa2u")]
+
+[node name="resource-planks" parent="." index="0" unique_id=1071125149]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1656995879]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1898561294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010990679, 0.03996277, 0.012254298)
+shape = SubResource("BoxShape3D_seg2c")

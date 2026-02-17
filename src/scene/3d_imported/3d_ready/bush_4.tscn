@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dofsv5enalh61"]
+
+[ext_resource type="ArrayMesh" uid="uid://cbpgvb21otpvl" path="res://src/scene/3d_modelen/Bush4/Bush4.obj" id="1_8lg1u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6hqv"]
+albedo_color = Color(3.128499e-07, 0.448277, 0.071536206, 1)
+
+[node name="bush4" type="Node3D" unique_id=1576352112]
+
+[node name="Bush4" type="MeshInstance3D" parent="." unique_id=1788044107]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -17.98289, 0, -12.778223)
+material_override = SubResource("StandardMaterial3D_h6hqv")
+mesh = ExtResource("1_8lg1u")

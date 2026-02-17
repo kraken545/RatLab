@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bm8fk388fqm5o"]
+
+[ext_resource type="PackedScene" uid="uid://dg7um7bpt2lm6" path="res://src/scene/3d_imported/FBX format/tree_plateau_dark.fbx" id="1_strvl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wst3h"]
+size = Vector3(0.1439209, 1.2428017, 0.105285645)
+
+[node name="tree_plateau_dark" unique_id=1392213134 instance=ExtResource("1_strvl")]
+
+[node name="tree_plateau_dark" parent="." index="0" unique_id=101537445]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.05, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree_plateau_dark" index="0" unique_id=2010832838]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_plateau_dark/StaticBody3D" index="0" unique_id=1999971032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014953613, 0.6277065, 0.00851326)
+shape = SubResource("BoxShape3D_wst3h")

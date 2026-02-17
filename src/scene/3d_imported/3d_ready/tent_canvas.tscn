@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dw73i0xf2wbrx"]
+
+[ext_resource type="PackedScene" uid="uid://2cvev3lt2kvg" path="res://src/scene/3d_imported/New folder/FBX format/tent-canvas.fbx" id="1_g21k7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ailg1"]
+size = Vector3(0.001, 0.4736328, 0.46679688)
+
+[node name="tent-canvas" unique_id=1467728096 instance=ExtResource("1_g21k7")]
+
+[node name="tent-canvas" parent="." index="0" unique_id=2093005091]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tent-canvas" index="0" unique_id=2034236766]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tent-canvas/StaticBody3D" index="0" unique_id=961704537]
+transform = Transform3D(0.81562287, -0.57858384, 0, 0.57858384, 0.81562287, 0, 0, 0, 1, 0.10366967, 0.2794814, 0.025636494)
+shape = SubResource("BoxShape3D_ailg1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="tent-canvas/StaticBody3D" index="1" unique_id=108007462]
+transform = Transform3D(0.8313241, 0.5557879, 0, -0.5557879, 0.8313241, 0, 0, 0, 1, -0.106456846, 0.26861244, 0.025636494)
+shape = SubResource("BoxShape3D_ailg1")

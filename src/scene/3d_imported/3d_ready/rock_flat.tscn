@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://0r086avl6o2j"]
+
+[ext_resource type="PackedScene" uid="uid://bran3ljgt27rs" path="res://src/scene/3d_imported/FBX format/rock-flat.fbx" id="1_0dwtf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fpumt"]
+size = Vector3(1.4504395, 0.16278076, 1)
+
+[node name="rock-flat" unique_id=1841867511 instance=ExtResource("1_0dwtf")]
+
+[node name="rock-flat" parent="." index="0" unique_id=960826400]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rock-flat" index="0" unique_id=980466197]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rock-flat/StaticBody3D" index="0" unique_id=72265643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016479492, 0.0776062, 0)
+shape = SubResource("BoxShape3D_fpumt")

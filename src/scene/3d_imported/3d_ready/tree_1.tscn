@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://4qn4ejbw2lx0"]
+
+[ext_resource type="ArrayMesh" uid="uid://dpix7qmsq0ctg" path="res://src/scene/3d_modelen/Tree1/Tree1.obj" id="1_a0wuq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30idh"]
+albedo_color = Color(0.66061753, 0.44187176, 0.18273327, 1)
+
+[node name="tree1" type="Node3D" unique_id=1984574806]
+
+[node name="Tree1" type="MeshInstance3D" parent="." unique_id=1581520290]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -9.933905, 1.9828093, -263.7173)
+material_override = SubResource("StandardMaterial3D_30idh")
+mesh = ExtResource("1_a0wuq")

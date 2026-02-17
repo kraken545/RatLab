@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://hjybklumksdx"]
+
+[ext_resource type="PackedScene" uid="uid://drnu0ry12bygg" path="res://src/scene/3d_imported/FBX/Rock_Moss_7.fbx" id="1_8dscn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajdop"]
+size = Vector3(0.69970703, 1, 0.6855469)
+
+[node name="Rock_Moss_7" unique_id=1747952218 instance=ExtResource("1_8dscn")]
+
+[node name="Rock_Moss_7" parent="." index="0" unique_id=1114054774]
+transform = Transform3D(1000, 0, 0, 0, -4.371139e-05, 1000, 0, -1000, -4.371139e-05, 0, 0.041392177, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rock_Moss_7" index="0" unique_id=212733722]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock_Moss_7/StaticBody3D" index="0" unique_id=184135280]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, -1.9428903e-16, 0, 1.9428903e-16, 0.01, -0.0008666992, -3.469447e-17, 0.0015722655)
+shape = SubResource("BoxShape3D_ajdop")

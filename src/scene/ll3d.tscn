@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d1kvtui4g5c03"]
+
+[ext_resource type="Script" uid="uid://ndmuv3bscg0t" path="res://src/script/character_body_3d_panda.gd" id="1_dx6vw"]
+[ext_resource type="Texture2D" uid="uid://lmpbhlmxn1l4" path="res://src/assets/animals/LLSprite_Nero_AI_Background_Remover_transparent.png" id="2_6m8d0"]
+[ext_resource type="Script" uid="uid://1b5fbae48p7m" path="res://src/scene/efecto_danio.gd" id="3_rp4du"]
+[ext_resource type="Script" uid="uid://bogh7oh24dvxs" path="res://src/script/spring_arm_3d.gd" id="4_6m8d0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dx6vw"]
+size = Vector3(0.9326172, 1.9663086, 0.1784668)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do2g2"]
+atlas = ExtResource("2_6m8d0")
+region = Rect2(864, 0, 288, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6ra7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do2g2")
+}],
+"loop": false,
+"name": &"idl",
+"speed": 5.0
+}]
+
+[node name="stokstaartje" type="Node3D" unique_id=1398261948]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1085799857 groups=["jugador"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3640146, 0)
+script = ExtResource("1_dx6vw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1463574554]
+transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0.0466626, 0.001014471, -0.052918077)
+shape = SubResource("BoxShape3D_dx6vw")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=2024768611]
+transform = Transform3D(0.9999939, -0.0034906515, 0, 0.0032477635, 0.93041193, 0.3665012, -0.001279328, -0.36649898, 0.9304176, 0, 0.159765, 0)
+sprite_frames = SubResource("SpriteFrames_u6ra7")
+animation = &"idl"
+frame_progress = 1.0
+
+[node name="EfectoDanio" type="Label3D" parent="CharacterBody3D" unique_id=89787640]
+pixel_size = 0.01
+billboard = 1
+modulate = Color(0.99999946, 0.20061648, 0.14992064, 1)
+font_size = 64
+script = ExtResource("3_rp4du")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D" unique_id=1602504871]
+transform = Transform3D(1, 0, 0, 0, 0.9381007, 0.34636265, 0, -0.34636265, 0.9381007, 0, 6.4589996, 4.895654)
+spring_length = 6.0
+script = ExtResource("4_6m8d0")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D" unique_id=1570202801]
+transform = Transform3D(1, 0, 0, 0, 0.9762546, 0.21662682, 0, -0.21662685, 0.9762546, 0, 0.60849285, 21.153925)
+fov = 80.31364

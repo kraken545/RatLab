@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://qpirs64dkrld"]
+
+[ext_resource type="Texture2D" uid="uid://xcw3yr5q5lpm" path="res://src/assets/npc/poplice_man.png" id="1_dus4k"]
+[ext_resource type="Texture2D" uid="uid://deroq6b4vr7kw" path="res://src/assets/npc/alert.png" id="2_wr3gr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjks0"]
+size = Vector3(2.1695557, 3.3502197, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hx2b"]
+atlas = ExtResource("1_dus4k")
+region = Rect2(0, 0, 498, 773)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cyxsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hx2b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="police_man" type="CharacterBody3D" unique_id=1707899808]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1124216080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008361816, 1.7384644, 0)
+shape = SubResource("BoxShape3D_gjks0")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=138918407]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 1.7816582, 0)
+sprite_frames = SubResource("SpriteFrames_cyxsu")
+
+[node name="AlertaIcon" type="Sprite3D" parent="." unique_id=1141139339]
+transform = Transform3D(0.64, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00022506714, 4.2990875, 0)
+texture = ExtResource("2_wr3gr")

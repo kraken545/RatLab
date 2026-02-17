@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://8w81h3xnr26a"]
+
+[ext_resource type="Texture2D" uid="uid://busrr6ewa80th" path="res://src/assets/npc/sientefic.png" id="1_g2ve6"]
+[ext_resource type="Texture2D" uid="uid://deroq6b4vr7kw" path="res://src/assets/npc/alert.png" id="2_i8om7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm505"]
+atlas = ExtResource("1_g2ve6")
+region = Rect2(0, 0, 507, 689)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5veg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm505")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2ve6"]
+size = Vector3(2.223755, 3.0586548, 1)
+
+[node name="sientific" type="CharacterBody3D" unique_id=1818138863]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=894318188]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0.19468597, 1.5686588, 0.0067310333)
+sprite_frames = SubResource("SpriteFrames_5veg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=431635544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13515186, 1.6151905, 0.06632233)
+shape = SubResource("BoxShape3D_g2ve6")
+
+[node name="AlertaIcon" type="Sprite3D" parent="." unique_id=476507819]
+transform = Transform3D(0.64, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00022506714, 4.2990875, 0)
+texture = ExtResource("2_i8om7")

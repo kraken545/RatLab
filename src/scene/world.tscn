@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b4fed3bncy1qh"]
+
+[ext_resource type="Script" uid="uid://wwx2nbwmvlhc" path="res://src/script/world_climbing.gd" id="1_cjspe"]
+[ext_resource type="Script" uid="uid://bla54g8nogn4p" path="res://src/script/mesh_instance_3d_2.gd" id="2_640v4"]
+[ext_resource type="Script" uid="uid://c17hu5ersbcir" path="res://src/script/mesh_instance_3d_3.gd" id="3_ikk52"]
+[ext_resource type="PackedScene" uid="uid://ckdmfhk4y30hg" path="res://src/scene/eend3d.tscn" id="5_d8bnw"]
+[ext_resource type="PackedScene" uid="uid://b1lh6kn03n5b3" path="res://src/scene/aap3d.tscn" id="6_7gxp8"]
+[ext_resource type="PackedScene" uid="uid://cadmr8lpfgtns" path="res://src/scene/kikker3d.tscn" id="6_btgb6"]
+[ext_resource type="PackedScene" uid="uid://cpu3tktfrph6s" path="res://src/scene/Leon3d.tscn" id="7_7wmjv"]
+[ext_resource type="PackedScene" uid="uid://d1kvtui4g5c03" path="res://src/scene/ll3d.tscn" id="8_btgb6"]
+[ext_resource type="PackedScene" uid="uid://bmdpovuwksgdm" path="res://src/scene/panda_3d.tscn" id="9_7wmjv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hbeho"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5lte0"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mrtsb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mrtsb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pcmil"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjspe"]
+
+[node name="world" type="Node3D" unique_id=484008576]
+script = ExtResource("1_cjspe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=266607499]
+transform = Transform3D(25.47, 0, 0, 0, 0.475, 0, 0, 0, 20.215, -0.067702174, -0.3825028, -0.13508224)
+mesh = SubResource("BoxMesh_hbeho")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1825278221]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1628558911]
+shape = SubResource("ConvexPolygonShape3D_5lte0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1249453074 node_paths=PackedStringArray("landing_marker") groups=["Climbable"]]
+transform = Transform3D(1, 0, 0, 0, 12.055, 0, 0, 0, 1, 8.346541, 5.8205714, -9.514969)
+mesh = SubResource("BoxMesh_mrtsb")
+script = ExtResource("2_640v4")
+landing_marker = NodePath("Marker3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=309694654]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=790287047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-05, 0.00075513124, 0.008713007)
+shape = SubResource("BoxShape3D_mrtsb")
+
+[node name="Marker3D" type="Marker3D" parent="MeshInstance3D2" unique_id=876786113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5641038, 0)
+visible = false
+gizmo_extents = 0.6
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1739641216 node_paths=PackedStringArray("landing_marker") groups=["Climbable"]]
+transform = Transform3D(0.9650165, 0, -0.26218918, 0, 11.77, 0, 0.26218918, 0, 0.9650165, -8.733524, 5.29, 6.861535)
+mesh = SubResource("BoxMesh_pcmil")
+script = ExtResource("3_ikk52")
+landing_marker = NodePath("Marker3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=521781781]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1443481152]
+shape = SubResource("BoxShape3D_cjspe")
+
+[node name="Marker3D" type="Marker3D" parent="MeshInstance3D3" unique_id=1188628115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5420234, 0)
+gizmo_extents = 0.6
+
+[node name="aap" parent="." unique_id=1589153327 instance=ExtResource("6_7gxp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0182264, 0, 0)
+
+[node name="Eend" parent="." unique_id=99029446 instance=ExtResource("5_d8bnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.053528, 0, 0)
+
+[node name="Kikker" parent="." unique_id=1004462273 instance=ExtResource("6_btgb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.70561, 0, 0)
+
+[node name="Leeuw" parent="." unique_id=956679259 instance=ExtResource("7_7wmjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.331545, 0, 0)
+
+[node name="stokstaartje" parent="." unique_id=1398261948 instance=ExtResource("8_btgb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0025682, 0, 0)
+
+[node name="panda" parent="." unique_id=575977674 instance=ExtResource("9_7wmjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7876532, 0, 0)

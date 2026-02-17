@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bmdpovuwksgdm"]
+
+[ext_resource type="Script" uid="uid://ndmuv3bscg0t" path="res://src/script/character_body_3d_panda.gd" id="1_miwax"]
+[ext_resource type="Texture2D" uid="uid://bqupfhxu80t6b" path="res://src/assets/animals/rode_panda.png" id="1_qr6lr"]
+[ext_resource type="Script" uid="uid://1b5fbae48p7m" path="res://src/scene/efecto_danio.gd" id="3_31qir"]
+[ext_resource type="Script" uid="uid://bogh7oh24dvxs" path="res://src/script/spring_arm_3d.gd" id="4_6y36b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yspve"]
+size = Vector3(1.8430176, 2.7797852, 0.1965332)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2xvm"]
+atlas = ExtResource("1_qr6lr")
+region = Rect2(0, 0, 880, 1216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odgbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2xvm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="panda" type="Node3D" unique_id=575977674]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=849817236 groups=["jugador"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3787336, 0)
+script = ExtResource("1_miwax")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=76680450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03739059, 0.036944985, 0.0054311305)
+shape = SubResource("BoxShape3D_yspve")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=455858512]
+transform = Transform3D(-0.5149797, 0.0031153273, 0.0033451603, 0.0016725982, 0.47916213, -0.18874809, -0.004254149, -0.18872981, -0.4791533, 3.6239624e-05, -0.011623144, -0.020290852)
+sprite_frames = SubResource("SpriteFrames_odgbe")
+frame_progress = 0.8226231
+
+[node name="EfectoDanio" type="Label3D" parent="CharacterBody3D" unique_id=1962849081]
+pixel_size = 0.01
+billboard = 1
+modulate = Color(0.99999946, 0.20061648, 0.14992064, 1)
+font_size = 64
+script = ExtResource("3_31qir")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D" unique_id=448417298]
+transform = Transform3D(1, 0, 0, 0, 0.9381007, 0.34636265, 0, -0.34636265, 0.9381007, 0, 6.4589996, 4.895654)
+spring_length = 6.0
+script = ExtResource("4_6y36b")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D" unique_id=1835509603]
+transform = Transform3D(1, 0, 0, 0, 0.9762546, 0.21662682, 0, -0.21662685, 0.9762546, 0, 0.60849285, 21.153925)
+fov = 80.31364

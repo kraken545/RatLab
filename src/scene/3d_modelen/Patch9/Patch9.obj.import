@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ew0iremfphgf"
+path="res://.godot/imported/Patch9.obj-e7b17ac92eaef50648025ddbadbe9a6d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Patch9.obj-e7b17ac92eaef50648025ddbadbe9a6d.mesh"]
+
+source_file="res://src/scene/3d_modelen/Patch9/Patch9.obj"
+dest_files=["res://.godot/imported/Patch9.obj-e7b17ac92eaef50648025ddbadbe9a6d.mesh", "res://.godot/imported/Patch9.obj-e7b17ac92eaef50648025ddbadbe9a6d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

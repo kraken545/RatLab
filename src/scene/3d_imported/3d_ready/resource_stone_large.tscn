@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ch11lpw7p6jde"]
+
+[ext_resource type="PackedScene" uid="uid://eogyxs5gvy82" path="res://src/scene/3d_imported/New folder/FBX format/resource-stone-large.fbx" id="1_tkxba"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tkxba"]
+size = Vector3(0.105041504, 0.10443115, 0.14355469)
+
+[node name="resource-stone-large" unique_id=1741324905 instance=ExtResource("1_tkxba")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="resource-stone-large" parent_id_path=PackedInt32Array(1098156774) index="0" unique_id=1718392821]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="resource-stone-large/StaticBody3D" index="0" unique_id=1086001223]
+transform = Transform3D(0.9999652, -0.008342577, 0, 0.008342577, 0.9999652, 0, 0, 0, 1, -0.115548566, 0.04026186, -0.025634766)
+shape = SubResource("BoxShape3D_tkxba")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="resource-stone-large/StaticBody3D" index="1" unique_id=1820965825]
+transform = Transform3D(0.9999652, -0.008342577, 0, 0.008342577, 0.9999652, 0, 0, 0, 1, -0.115548566, 0.04026186, -0.025634766)
+shape = SubResource("BoxShape3D_tkxba")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="resource-stone-large/StaticBody3D" index="2" unique_id=2066959174]
+transform = Transform3D(0.9999652, -0.008342577, 0, 0.008342577, 0.9999652, 0, 0, 0, 1, 0.08208373, 0.043786194, -0.06833649)
+shape = SubResource("BoxShape3D_tkxba")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="resource-stone-large/StaticBody3D" index="3" unique_id=74001605]
+transform = Transform3D(0.9999652, -0.008342577, 0, 0.008342577, 0.9999652, 0, 0, 0, 1, 0.036551952, 0.043786194, 0.0436095)
+shape = SubResource("BoxShape3D_tkxba")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="resource-stone-large/StaticBody3D" index="4" unique_id=1207308847]
+transform = Transform3D(0.9999652, -0.008342577, 0, 0.008342577, 0.9999652, 0, 0, 0, 1, 0.036551952, 0.09772748, -0.04793161)
+shape = SubResource("BoxShape3D_tkxba")
